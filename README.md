@@ -1,73 +1,94 @@
-# React + TypeScript + Vite
+# 📱 PocketTrack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![PocketTrack Banner](https://via.placeholder.com/1200x400/0f172a/38bdf8?text=PocketTrack+-+Smart+Finance+Tracking)
 
-Currently, two official plugins are available:
+> A modern, AI-powered personal finance and budget tracking application built with React, Supabase, and Gemini.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+PocketTrack helps you take control of your financial life. Track your daily expenses, monitor your budgets, get AI-driven insights on your spending habits, and visualize your financial health with beautiful, interactive charts.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+- **📊 Comprehensive Dashboard**: Get a bird's-eye view of your financial status, recent transactions, and spending summaries.
+- **💸 Transaction Management**: Easily add, edit, categorize, and delete your income and expenses.
+- **📈 Advanced Reports & Analytics**: Visualize your spending trends with interactive charts (powered by Recharts).
+- **🎯 Smart Budgeting**: Set and monitor monthly budgets across different categories.
+- **🤖 AI Financial Insights**: Leverage Google Gemini AI to analyze your spending behavior and provide personalized financial tips.
+- **🔐 Secure Authentication**: Safe and reliable user authentication powered by Supabase.
+- **☁️ Cloud Sync**: All your financial data is securely stored and instantly synced across your devices.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Frontend Core**: [React 19](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), [Vite](https://vitejs.dev/)
+- **Styling & UI**: [Tailwind CSS](https://tailwindcss.com/), [Lucide React](https://lucide.dev/) (Icons)
+- **Routing**: [React Router DOM](https://reactrouter.com/)
+- **Backend & Auth**: [Supabase](https://supabase.com/)
+- **AI Integration**: [Google Gemini GenAI](https://ai.google.dev/)
+- **Data Visualization**: [Recharts](https://recharts.org/)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Getting Started
+
+Follow these instructions to set up the project locally on your machine.
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18 or higher recommended)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Sohampatil00/pockettrack.git
+   cd pockettrack
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Environment Setup**
+   Create a `.env.local` file in the root directory and add the following required environment variables:
+   ```env
+   VITE_SUPABASE_URL=your_supabase_project_url
+   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+   VITE_GEMINI_API_KEY=your_gemini_api_key
+   ```
+   *(Note: You will need to create a project on Supabase and obtain a Gemini API key from Google AI Studio.)*
+
+4. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+
+5. **Open the app**
+   Visit `http://localhost:5173` in your browser.
+
+---
+
+## 📂 Project Structure
+
+```text
+src/
+├── assets/        # Static assets (images, logos)
+├── components/    # Reusable UI components (layout, auth, common)
+├── context/       # Global React context (Theme, App, Auth)
+├── lib/           # Third-party library integrations (Supabase)
+├── pages/         # Route level components (Dashboard, Transactions, etc.)
+├── services/      # API and backend service interactions
+├── types/         # TypeScript interface definitions
+├── utils/         # Helper utility functions
+├── App.tsx        # Main Application component & Routing
+└── main.tsx       # Application entry point
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📜 License
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+This project is licensed under the MIT License. Feel free to use and modify it for your own needs.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+*Built with ❤️ for better financial health.*
